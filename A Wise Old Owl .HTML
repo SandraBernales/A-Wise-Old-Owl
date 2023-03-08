@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Wise Old Owl</title>
+    <style>
+        div{
+    float: left;
+    margin: 10px;
+    
+}
+
+.storyBox{
+    border: 2px dashed rgb(143, 24, 113);
+    padding: 30px;
+    font-size: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.startRow{
+    display: inline-block;
+    
+}
+
+.choiceBoxes{
+    font-size: 20px;
+    background-color:  rgb(15, 108, 145) ;
+    border: 2px solid rgb(194, 33, 21);
+    border-radius: 50%;
+    padding: 10px;
+    width: 70px;
+    height: 30px;
+    text-align:center;
+    color: white;
+}
+    </style>
+</head>
+<body>
+        <div class="storyBox" id="storyOutput"></div>   
+
+        <div class="startRow choiceBoxes" onclick="chooseFirstWord(this)" >wise</div>
+
+        <div class="startRow choiceBoxes" onclick="chooseSecondWord(this)">Oak</div>
+
+        <div class="startRow choiceBoxes" onclick="chooseThirdWord(this)">he</div>
+
+        <div class="startRow choiceBoxes" onclick="chooseFourthWord(this)">spoke.</div>
+
+        <div class="startRow choiceBoxes" onclick="chooseFifthWord(this)">less</div>
+
+        <div class="startRow choiceBoxes" onclick="chooseSixthWord(this)">heard</div>
+
+        <div class="startRow choiceBoxes" onclick="chooseSeventhWord(this)">be</div>
+
+        <div class="startRow choiceBoxes" onclick="chooseEightWord(this)">bird?</div>
+
+
+        <script>
+
+        const output = document.getElementById("storyOutput");
+
+        let firstWord = "___";
+        let secondWord = "___";
+        let thirdWord = "___";
+        let fourthWord = "___";
+        let fiftheWord = "___";
+        let sixtheWord = "___";
+        let seventhWord = "___";
+        let eightWord = "___";
+
+         buildStory();
+
+        function buildStory(){
+            output.innerHTML = `
+
+            A ${firstWord} old owl lived in an ${secondWord}
+            the more ${thirdWord} saw the less he ${fourthWord}
+            The ${fiftheWord} he spoke the more he ${sixtheWord}
+            Why cant we all ${seventhWord} like the wish old ${eightWord}
+            `;
+
+            //output.innerHTML = `
+
+            //A ' + firstWord + ' old owl lived in an ' + secondWord + '
+            //the more ' + thirdWord + ' saw the less he ' + fourthWord + '
+            //the ' + fiftheWord + ' he spoke the more he ' + sixtheWord + '
+            //why cant we all ' + seventhWord + ' like the wise old ' + eightWord + '
+            //`;    
+        }
+
+        function chooseFirstWord(choice){
+            firstWord = choice.innerHTML;
+            buildStory(); 
+         }    
+
+         function chooseSecondWord(choice){
+            secondWord = choice.innerHTML;
+            buildStory(); 
+        }
+
+        function chooseThirdWord(choice){
+            thirdWord = choice.innerHTML;
+            buildStory(); 
+        }
+
+        function chooseFourthWord(choice){
+            fourthWord = choice.innerHTML;
+            buildStory(); 
+        }
+
+        function chooseFifthWord(choise){
+            fiftheWord = choise.innerHTML;
+            buildStory();
+        }
+
+        function chooseSixthWord(choise){
+            sixtheWord = choise.innerHTML;
+            buildStory();
+        }
+
+        function chooseSeventhWord(choise){
+            seventhWord = choise.innerHTML;
+            buildStory();
+        }
+
+        function chooseEightWord(choise){
+            eightWord = choise.innerHTML;
+            buildStory();
+        }
+
+        </script>
+</body>
+</html>
